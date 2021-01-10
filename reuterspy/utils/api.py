@@ -8,13 +8,13 @@ BASE_URL = 'https://www.reuters.com/companies/api'
 
 def get_data(ticker, report_name, yearly=True):
     """
-    This function get data from reuters api (https://www.reuters.com/companies/api/getFetchCompanyFinancials/[ticker]),
-    get company financials `income statement, cash flow and balance sheet`
+    This function gets company's financial reports from reuters api (https://www.reuters.com/companies/api/getFetchCompanyFinancials/[ticker]),
+    these informations are `income statement, cash flow and balance sheet`.
     
     Args:
-        ticker (:obj: `str`): symbol of the stock to retrieve its company profile. 
+        ticker (:obj: `str`): symbol of the stock to retrieve its company's profile. 
         report_name (:obj: `str`):name of the financial report, can be: <income, cash_flow, balance_sheet>
-        yearly (:obj: `bool`, optional [default True]: if True return yearly report, if False return quarterly report.
+        yearly (:obj: `bool`, optional [default True]: if True returns yearly report or False returns quarterly report.
 
     Returns:
         :obj:`json` - data:
@@ -37,11 +37,9 @@ def get_data(ticker, report_name, yearly=True):
   
 def get_fields_date(ticker):
     """
-    This function get data from reuters api (https://www.reuters.com/companies/api/getFetchCompanyKeyMetrics/[ticker]),
-    get value of date fields `Pricing date, 52 Week High Date and 52 Week Low Date`.
-    
+    This function gets value of date fields `Pricing date, 52 Week High Date and 52 Week Low Date` from reuters api (https://www.reuters.com/companies/api/getFetchCompanyKeyMetrics/[ticker]).    
     Args:
-        ticker (:obj:`str`): symbol of the stock to retrieve its company profile. 
+        ticker (:obj:`str`): symbol of the stock to retrieve its company's profile. 
 
     Returns:
         :obj:`json` - data:

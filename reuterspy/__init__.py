@@ -19,10 +19,10 @@ class Reuters:
     """
     def get_income_statement(self, ticker_list, yearly=True):
         """
-        This function get income statement report
+        This function gets income statement report
 
         Args:
-            ticker_list (`list`): list of symbol of the stocks to retrieve its company profile.
+            ticker_list (`list`): symbol's list of the stocks to retrieve its company profile.
             yearly (`bool`): if True return yearly report, if False return quarterly report.
 
         Returns:
@@ -57,10 +57,10 @@ class Reuters:
 
     def get_cash_flow(self, ticker_list, yearly=True):
         """
-        This function get cash flow report
+        This function gets cash flow report
 
         Args:
-            ticker_list (`list`): list of symbol of the stocks to retrieve its company profile.
+            ticker_list (`list`): symbol's list of the stocks to retrieve its company profile.
             yearly (`bool`): if True return yearly report, if False return quarterly report.
 
         Returns:
@@ -95,10 +95,10 @@ class Reuters:
 
     def get_balance_sheet(self, ticker_list, yearly=True):
         """
-        This function get balance sheet report
+        This function gets balance sheet report
 
         Args:
-            ticker_list (`list`): list of symbol of the stocks to retrieve its company profile.
+            ticker_list (`list`): symbol's list of the stocks to retrieve its company profile.
             yearly (`bool`): if True return yearly report, if False return quarterly report.
 
         Returns:
@@ -133,10 +133,10 @@ class Reuters:
 
     def get_key_metrics(self, ticker_list):
         """
-        This function get key metrics report
+        This function gets key metrics report
 
         Args:
-            ticker_list (`list`): list of symbol of the stocks to retrieve its company profile.
+            ticker_list (`list`): symbol's list of the stocks to retrieve its company profile.
             yearly (`bool`): if True return yearly report, if False return quarterly report.
 
         Returns:
