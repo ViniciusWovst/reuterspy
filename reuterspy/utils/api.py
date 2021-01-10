@@ -7,6 +7,19 @@ from datetime import datetime
 BASE_URL = 'https://www.reuters.com/companies/api'
 
 def get_data(ticker, report_name, yearly=True):
+    """
+    This function get data from reuters api (https://www.reuters.com/companies/api/getFetchCompanyFinancials/[ticker]),
+    get company financials `income statement, cash flow and balance sheet`
+    
+    Args:
+        ticker (:obj: `str`): symbol of the stock to retrieve its company profile. 
+        report_name (:obj: `str`):name of the financial report, can be: <income, cash_flow, balance_sheet>
+        yearly (:obj: `bool`, optional [default True]: if True return yearly report, if False return quarterly report.
+
+    Returns:
+        :obj:`json` - data:
+            This function returns a :obj:`json`  containing recent data of the specific stock informed in `ticker` parameter.
+    """
     url = '%s/getFetchCompanyFinancials/%s' % (BASE_URL, ticker)
     request = requests.get(url)
     result = {}
@@ -23,15 +36,32 @@ def get_data(ticker, report_name, yearly=True):
     return result
   
 def get_fields_date(ticker):
-        fields_date = {}
-        url = '%s/getFetchCompanyKeyMetrics/%s' % (BASE_URL, ticker)
-        request = requests.get(url)
-        DATE_MASK = '%Y-%m-%dT%H:%M:%S'
-        if request.status_code == 200:
-            content = request.json()['market_data']
-            fields_date = {
-                'Pricing date':datetime.strptime(content['price_date'], DATE_MASK).date(),
-                '52 Week High Date':datetime.strptime(content['fiftytwo_week_high_date'], DATE_MASK).date(),
-                '52 Week Low Date':datetime.strptime(content['fiftytwo_week_low_date'], DATE_MASK).date()
+    """
+    This function get data from reuters api (https://www.reuters.com/companies/api/getFetchCompanyKeyMetrics/[ticker]),
+    get value of date fields `Pricing date, 52 Week High Date and 52 Week Low Date`.
+    
+    Args:
+        ticker (:obj:`str`): symbol of the stock to retrieve its company profile. 
+
+    Returns:
+        :obj:`json` - data:
+            This function returns a :obj:`json` containing dates `Pricing date, 52 Week High Date and 52 Week Low Date`, the output will be::
+            
+            {
+            Pricing date: yyyy-mm-ddTHH:MM:SS,
+            52 Week High Date: yyyy-mm-ddTHH:MM:SS,
+            52 Week Low Date: yyyy-mm-ddTHH:MM:SS
             }
-        return fields_date
+    """
+    fields_date = {}
+    url = '%s/getFetchCompanyKeyMetrics/%s' % (BASE_URL, ticker)
+    request = requests.get(url)
+    DATE_MASK = '%Y-%m-%dT%H:%M:%S'
+    if request.status_code == 200:
+        content = request.json()['market_data']
+        fields_date = {
+            'Pricing date':datetime.strptime(content['price_date'], DATE_MASK).date(),
+            '52 Week High Date':datetime.strptime(content['fiftytwo_week_high_date'], DATE_MASK).date(),
+            '52 Week Low Date':datetime.strptime(content['fiftytwo_week_low_date'], DATE_MASK).date()
+        }
+    return fields_date
