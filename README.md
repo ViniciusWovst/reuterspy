@@ -1,2 +1,2 @@
 # reuterspy
-A simple lib that get data on Reuters.com
+Financial Data Extraction from Reuters.com with Python
