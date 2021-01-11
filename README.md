@@ -1,4 +1,5 @@
 # reuterspy
+[![reuterpy](https://img.shields.io/pypi/dm/reuterspy?color=blue&label=installs)](README.md)
 <h2 align="center">Financial Data Extraction from Reuters.com with Python</h2>
 
 reuterspy is a Python package to retrieve data from [reuters.com](https://www.reuters.com/), which provides **Balance sheet, Cash Flow, Income Statement and Key Metrics**.
