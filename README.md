@@ -25,7 +25,7 @@ An income statement is one of the three important financial statements used for 
 
 Also known as the profit and loss statement or the statement of revenue and expense, the income statement primarily focuses on the company’s revenues and expenses during a particular period.
 
-In the example presented below, the yearly income statement of an stock is retrieved.
+In the example presented below, the yearly income statement of a stock is retrieved.
 
 ```python
 from reuterspy import Reuters
@@ -54,7 +54,7 @@ A balance sheet is a financial statement that reports a company's assets, liabil
 
 The balance sheet is used alongside other important financial statements such as the income statement and statement of cash flows in conducting fundamental analysis or calculating financial ratios.
 
-In the example presented below, the yearly Balance Sheet of an stock is retrieved.
+In the example presented below, the yearly Balance Sheet of a stock is retrieved.
 
 ```python
 from reuterspy import Reuters
@@ -81,7 +81,7 @@ NFLX.O   balance_sheet  2019  Cash & Equivalents  1914.912000
  
 Cash flow is the net amount of cash and cash-equivalents being transferred into and out of a business. At the most fundamental level, a company’s ability to create value for shareholders is determined by its ability to generate positive cash flows, or more specifically, maximize long-term free cash flow (FCF).
 
-In the example presented below, the yearly Cash Flow of an stock is retrieved.
+In the example presented below, the yearly Cash Flow of a stock is retrieved.
 
 
 ```python
@@ -105,7 +105,7 @@ NFLX.O       cash_flow  2015  Net Income/Starting Line   122.641000
 
 <h2 align="center">Key Metrics</h2>
 
-In the example presented below, the key metrics of an stock is retrieved.
+In the example presented below, the key metrics of a stock is retrieved.
 
 ```python
 from reuterspy import Reuters
